@@ -4,9 +4,9 @@ module.exports = function (app) {
     var todoList = require('../controllers/Controllers');
 
     // todoList Routes
-    app.route('/user')
-        .get(todoList.users)
-        .post(todoList.create_user);
+    app.route('/users')
+        .post(todoList.users)
+        .get(todoList.create_user);
 
     app.route('/user/:taskId')
         .get(todoList.get_user)

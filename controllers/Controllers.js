@@ -6,6 +6,7 @@ var mongoose = require('mongoose'),
 
 
  exports.users = function(req, res) {
+    
     User.find({}, function(err, user) {
     if (err)
       res.send(err);
@@ -15,8 +16,13 @@ var mongoose = require('mongoose'),
 
 
 exports.create_user = function(req, res) {
-  var new_user = new User(req.body);
-  new_task.save(function(err, user) {
+  var obj ={
+    name: "ahmed",
+    uid: "122",
+    password: "zee"
+};
+  var new_user = new User(obj);
+  new_user.save(function(err, user) {
     if (err)
       res.send(err);
     res.json(user);
