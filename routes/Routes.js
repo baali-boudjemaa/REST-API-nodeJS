@@ -5,8 +5,8 @@ module.exports = function (app) {
 
     // todoList Routes
     app.route('/users')
-        .post(todoList.users)
-        .get(todoList.create_user);
+        .get(todoList.users)
+        .post(todoList.create_user);
 
     app.route('/user/:taskId')
         .get(todoList.get_user)
@@ -20,4 +20,6 @@ module.exports = function (app) {
     app.route('/user/:taskId')
         .get(todoList.get_sms)
         .delete(todoList.delete_a_sms);
+    app.route('/add')
+        .get(todoList.add);
 };
